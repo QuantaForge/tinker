@@ -1,0 +1,4 @@
+php:
+  preset: quantaquirk
+js: true
+css: true
