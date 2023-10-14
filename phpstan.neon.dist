@@ -7,5 +7,5 @@ parameters:
 
   ignoreErrors:
     - "#Unsafe usage of new static\\(\\)#"
-    - "#Class QuantaQuirk\\\\Foundation\\\\Application not found.#"
-    - "#Class QuantaQuirk\\\\Lumen\\\\Application not found.#"
+    - "#Class QuantaForge\\\\Foundation\\\\Application not found.#"
+    - "#Class QuantaForge\\\\Lumen\\\\Application not found.#"

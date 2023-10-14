@@ -1,12 +1,12 @@
 <?php
 
-namespace QuantaQuirk\Tinker;
+namespace QuantaForge\Tinker;
 
-use QuantaQuirk\Contracts\Support\DeferrableProvider;
-use QuantaQuirk\Foundation\Application as QuantaQuirkApplication;
-use QuantaQuirk\Support\ServiceProvider;
-use QuantaQuirk\Lumen\Application as LumenApplication;
-use QuantaQuirk\Tinker\Console\TinkerCommand;
+use QuantaForge\Contracts\Support\DeferrableProvider;
+use QuantaForge\Foundation\Application as QuantaForgeApplication;
+use QuantaForge\Support\ServiceProvider;
+use QuantaForge\Lumen\Application as LumenApplication;
+use QuantaForge\Tinker\Console\TinkerCommand;
 
 class TinkerServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -19,7 +19,7 @@ class TinkerServiceProvider extends ServiceProvider implements DeferrableProvide
     {
         $source = realpath($raw = __DIR__.'/../config/tinker.php') ?: $raw;
 
-        if ($this->app instanceof QuantaQuirkApplication && $this->app->runningInConsole()) {
+        if ($this->app instanceof QuantaForgeApplication && $this->app->runningInConsole()) {
             $this->publishes([$source => $this->app->configPath('tinker.php')]);
         } elseif ($this->app instanceof LumenApplication) {
             $this->app->configure('tinker');

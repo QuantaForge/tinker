@@ -1,4 +1,4 @@
 php:
-  preset: quantaquirk
+  preset: quantaforge
 js: true
 css: true

@@ -1,8 +1,8 @@
 <?php
 
-namespace QuantaQuirk\Tinker;
+namespace QuantaForge\Tinker;
 
-use QuantaQuirk\Support\Str;
+use QuantaForge\Support\Str;
 use Psy\Shell;
 
 class ClassAliasAutoloader
@@ -31,14 +31,14 @@ class ClassAliasAutoloader
     /**
      * Explicitly included namespaces/classes.
      *
-     * @var \QuantaQuirk\Support\Collection
+     * @var \QuantaForge\Support\Collection
      */
     protected $includedAliases;
 
     /**
      * Excluded namespaces/classes.
      *
-     * @var \QuantaQuirk\Support\Collection
+     * @var \QuantaForge\Support\Collection
      */
     protected $excludedAliases;
 

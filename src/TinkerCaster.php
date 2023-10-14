@@ -1,6 +1,6 @@
 <?php
 
-namespace QuantaQuirk\Tinker;
+namespace QuantaForge\Tinker;
 
 use Exception;
 use Symfony\Component\VarDumper\Caster\Caster;
@@ -33,7 +33,7 @@ class TinkerCaster
     /**
      * Get an array representing the properties of an application.
      *
-     * @param  \QuantaQuirk\Foundation\Application  $app
+     * @param  \QuantaForge\Foundation\Application  $app
      * @return array
      */
     public static function castApplication($app)
@@ -58,7 +58,7 @@ class TinkerCaster
     /**
      * Get an array representing the properties of a collection.
      *
-     * @param  \QuantaQuirk\Support\Collection  $collection
+     * @param  \QuantaForge\Support\Collection  $collection
      * @return array
      */
     public static function castCollection($collection)
@@ -71,7 +71,7 @@ class TinkerCaster
     /**
      * Get an array representing the properties of an html string.
      *
-     * @param  \QuantaQuirk\Support\HtmlString  $htmlString
+     * @param  \QuantaForge\Support\HtmlString  $htmlString
      * @return array
      */
     public static function castHtmlString($htmlString)
@@ -84,7 +84,7 @@ class TinkerCaster
     /**
      * Get an array representing the properties of a fluent string.
      *
-     * @param  \QuantaQuirk\Support\Stringable  $stringable
+     * @param  \QuantaForge\Support\Stringable  $stringable
      * @return array
      */
     public static function castStringable($stringable)
@@ -97,7 +97,7 @@ class TinkerCaster
     /**
      * Get an array representing the properties of a process result.
      *
-     * @param  \QuantaQuirk\Process\ProcessResult  $result
+     * @param  \QuantaForge\Process\ProcessResult  $result
      * @return array
      */
     public static function castProcessResult($result)
@@ -113,7 +113,7 @@ class TinkerCaster
     /**
      * Get an array representing the properties of a model.
      *
-     * @param  \QuantaQuirk\Database\Eloquent\Model  $model
+     * @param  \QuantaForge\Database\Eloquent\Model  $model
      * @return array
      */
     public static function castModel($model)

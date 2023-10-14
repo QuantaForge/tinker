@@ -11,7 +11,7 @@
          stopOnFailure="false"
 >
     <testsuites>
-        <testsuite name="QuantaQuirk Tinker Test Suite">
+        <testsuite name="QuantaForge Tinker Test Suite">
             <directory suffix=".php">./tests/</directory>
         </testsuite>
     </testsuites>

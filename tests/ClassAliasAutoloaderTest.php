@@ -1,8 +1,8 @@
 <?php
 
-namespace QuantaQuirk\Tinker\Tests;
+namespace QuantaForge\Tinker\Tests;
 
-use QuantaQuirk\Tinker\ClassAliasAutoloader;
+use QuantaForge\Tinker\ClassAliasAutoloader;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Psy\Shell;

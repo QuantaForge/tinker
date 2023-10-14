@@ -1,9 +1,9 @@
 <?php
 
-namespace QuantaQuirk\Tinker\Tests;
+namespace QuantaForge\Tinker\Tests;
 
-use QuantaQuirk\Support\Collection;
-use QuantaQuirk\Tinker\TinkerCaster;
+use QuantaForge\Support\Collection;
+use QuantaForge\Tinker\TinkerCaster;
 use PHPUnit\Framework\TestCase;
 
 class TinkerCasterTest extends TestCase

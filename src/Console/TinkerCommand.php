@@ -1,10 +1,10 @@
 <?php
 
-namespace QuantaQuirk\Tinker\Console;
+namespace QuantaForge\Tinker\Console;
 
-use QuantaQuirk\Console\Command;
-use QuantaQuirk\Support\Env;
-use QuantaQuirk\Tinker\ClassAliasAutoloader;
+use QuantaForge\Console\Command;
+use QuantaForge\Support\Env;
+use QuantaForge\Tinker\ClassAliasAutoloader;
 use Psy\Configuration;
 use Psy\Shell;
 use Psy\VersionUpdater\Checker;
@@ -60,11 +60,11 @@ class TinkerCommand extends Command
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
-        $path = Env::get('COMPOSER_VENDOR_DIR', $this->getQuantaQuirk()->basePath().DIRECTORY_SEPARATOR.'vendor');
+        $path = Env::get('COMPOSER_VENDOR_DIR', $this->getQuantaForge()->basePath().DIRECTORY_SEPARATOR.'vendor');
 
         $path .= '/composer/autoload_classmap.php';
 
-        $config = $this->getQuantaQuirk()->make('config');
+        $config = $this->getQuantaForge()->make('config');
 
         $loader = ClassAliasAutoloader::register(
             $shell, $path, $config->get('tinker.alias', []), $config->get('tinker.dont_alias', [])
@@ -103,11 +103,11 @@ class TinkerCommand extends Command
             }
         }
 
-        $config = $this->getQuantaQuirk()->make('config');
+        $config = $this->getQuantaForge()->make('config');
 
         foreach ($config->get('tinker.commands', []) as $command) {
             $commands[] = $this->getApplication()->add(
-                $this->getQuantaQuirk()->make($command)
+                $this->getQuantaForge()->make($command)
             );
         }
 
@@ -115,31 +115,31 @@ class TinkerCommand extends Command
     }
 
     /**
-     * Get an array of QuantaQuirk tailored casters.
+     * Get an array of QuantaForge tailored casters.
      *
      * @return array
      */
     protected function getCasters()
     {
         $casters = [
-            'QuantaQuirk\Support\Collection' => 'QuantaQuirk\Tinker\TinkerCaster::castCollection',
-            'QuantaQuirk\Support\HtmlString' => 'QuantaQuirk\Tinker\TinkerCaster::castHtmlString',
-            'QuantaQuirk\Support\Stringable' => 'QuantaQuirk\Tinker\TinkerCaster::castStringable',
+            'QuantaForge\Support\Collection' => 'QuantaForge\Tinker\TinkerCaster::castCollection',
+            'QuantaForge\Support\HtmlString' => 'QuantaForge\Tinker\TinkerCaster::castHtmlString',
+            'QuantaForge\Support\Stringable' => 'QuantaForge\Tinker\TinkerCaster::castStringable',
         ];
 
-        if (class_exists('QuantaQuirk\Database\Eloquent\Model')) {
-            $casters['QuantaQuirk\Database\Eloquent\Model'] = 'QuantaQuirk\Tinker\TinkerCaster::castModel';
+        if (class_exists('QuantaForge\Database\Eloquent\Model')) {
+            $casters['QuantaForge\Database\Eloquent\Model'] = 'QuantaForge\Tinker\TinkerCaster::castModel';
         }
 
-        if (class_exists('QuantaQuirk\Process\ProcessResult')) {
-            $casters['QuantaQuirk\Process\ProcessResult'] = 'QuantaQuirk\Tinker\TinkerCaster::castProcessResult';
+        if (class_exists('QuantaForge\Process\ProcessResult')) {
+            $casters['QuantaForge\Process\ProcessResult'] = 'QuantaForge\Tinker\TinkerCaster::castProcessResult';
         }
 
-        if (class_exists('QuantaQuirk\Foundation\Application')) {
-            $casters['QuantaQuirk\Foundation\Application'] = 'QuantaQuirk\Tinker\TinkerCaster::castApplication';
+        if (class_exists('QuantaForge\Foundation\Application')) {
+            $casters['QuantaForge\Foundation\Application'] = 'QuantaForge\Tinker\TinkerCaster::castApplication';
         }
 
-        $config = $this->getQuantaQuirk()->make('config');
+        $config = $this->getQuantaForge()->make('config');
 
         return array_merge($casters, (array) $config->get('tinker.casters', []));
     }
